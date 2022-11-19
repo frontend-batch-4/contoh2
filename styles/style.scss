@@ -61,6 +61,17 @@
   }
 }
 
+.footer {
+  .box-social {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+}
+
 .vertical-line {
   height: 100%;
   width: 1px;
