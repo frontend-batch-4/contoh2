@@ -12,10 +12,36 @@ export default function Home() {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "180px",
     slidesToShow: 1,
     speed: 500,
     arrows: false,
+    centerPadding: "300px",
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: "200px",
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          centerPadding: "100px",
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          centerPadding: "50px",
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          centerPadding: "25px",
+        },
+      },
+    ],
   };
   return (
     <div className="landing-page">
@@ -30,78 +56,9 @@ export default function Home() {
         {/* carousel section */}
         <div className="carousel-sec py-5">
           <Slider {...settings}>
-            <div className="slide">
-              <div className="card-carousel d-flex">
-                <div className="thumbnail">
-                  <Image
-                    src="/img/dummy-photos.png"
-                    fill
-                    objectFit="cover"
-                    objectPosition="center"
-                  />
-                </div>
-                <div className="desc">
-                  <h1>Jazz Concert B 1</h1>
-                  <div className="d-flex align-items-center">
-                    <p>Rp 12.000-Rp 75.000</p>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut dolor magna.
-                    Fusce tincidunt sem velit, quis vestibulum risus posuere sed. Proin consectetur,
-                    felis a aliquet euismod, neque orci egestas diam, ...
-                  </p>
-                  <p className="date">22 November - 01 Desember</p>
-                </div>
-              </div>
-            </div>
-            <div className="slide">
-              <div className="card-carousel d-flex">
-                <div className="thumbnail">
-                  <Image
-                    src="/img/dummy-photos.png"
-                    fill
-                    objectFit="cover"
-                    objectPosition="center"
-                  />
-                </div>
-                <div className="desc">
-                  <h1>Jazz Concert B 1</h1>
-                  <div className="d-flex align-items-center">
-                    <p>Rp 12.000-Rp 75.000</p>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut dolor magna.
-                    Fusce tincidunt sem velit, quis vestibulum risus posuere sed. Proin consectetur,
-                    felis a aliquet euismod, neque orci egestas diam, ...
-                  </p>
-                  <p className="date">22 November - 01 Desember</p>
-                </div>
-              </div>
-            </div>
-            <div className="slide">
-              <div className="card-carousel d-flex">
-                <div className="thumbnail">
-                  <Image
-                    src="/img/dummy-photos.png"
-                    fill
-                    objectFit="cover"
-                    objectPosition="center"
-                  />
-                </div>
-                <div className="desc">
-                  <h1>Jazz Concert B 1</h1>
-                  <div className="d-flex align-items-center">
-                    <p>Rp 12.000-Rp 75.000</p>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut dolor magna.
-                    Fusce tincidunt sem velit, quis vestibulum risus posuere sed. Proin consectetur,
-                    felis a aliquet euismod, neque orci egestas diam, ...
-                  </p>
-                  <p className="date">22 November - 01 Desember</p>
-                </div>
-              </div>
-            </div>
+            <Slide title="slide 1" />
+            <Slide title="slide 2" />
+            <Slide title="slide 3" />
           </Slider>
         </div>
 
@@ -236,6 +193,30 @@ export default function Home() {
       </main>
 
       <Footer />
+    </div>
+  );
+}
+
+export function Slide(props) {
+  return (
+    <div className="slide">
+      <div className="card-carousel d-flex flex-sm-row flex-column">
+        <div className="thumbnail">
+          <Image src="/img/dummy-photos.png" fill objectFit="cover" objectPosition="center" />
+        </div>
+        <div className="desc">
+          <h1>{props.title}</h1>
+          <div className="d-flex align-items-center">
+            <p>Rp 12.000-Rp 75.000</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut dolor magna. Fusce
+            tincidunt sem velit, quis vestibulum risus posuere sed. Proin consectetur, felis a
+            aliquet euismod, neque orci egestas diam, ...
+          </p>
+          <p className="date">22 November - 01 Desember</p>
+        </div>
+      </div>
     </div>
   );
 }
