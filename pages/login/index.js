@@ -1,6 +1,27 @@
 import Navbar from "../../components/navbar";
+import { useState } from "react";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    const data = {
+      login_identity: email,
+      password,
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/v1/user/login`, options)
+      .then((response) => response.json())
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div className="login-page">
       <Navbar />
@@ -14,27 +35,43 @@ export default function Login() {
                   <p>Silahkan memasukkan detail anda untuk melanjutkan proses login</p>
                 </div>
                 <hr className="my-3" />
-                <form>
-                  <div className="mb-3">
-                    <label htmlFor="username">Username atau email</label>
-                    <input id="username" type="text" className="form-control" />
+                <div className="mb-3">
+                  <label htmlFor="username">Username atau email</label>
+                  <input
+                    id="username"
+                    type="text"
+                    className="form-control"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="mb-2">
+                  <div className="d-flex justify-content-between">
+                    <label htmlFor="password">Password</label>
+                    <a href="#">Forgot password?</a>
                   </div>
-                  <div className="mb-2">
-                    <div className="d-flex justify-content-between">
-                      <label htmlFor="password">Password</label>
-                      <a href="#">Forgot password?</a>
-                    </div>
-                    <input id="password" type="password" className="form-control" />
-                  </div>
-                  <p>
-                    Belum punya akun? <a href="#">Daftar disini!</a>
-                  </p>
-                  <button className="btn btn-primary w-100">Login</button>
-                  <hr className="my-3" />
-                  <button className="btn btn-outline-primary w-100">
-                    <i class="fa fa-vr-cardboard fs-6 me-3"></i>Login dengan Gmail
-                  </button>
-                </form>
+                  <input
+                    id="password"
+                    type="password"
+                    className="form-control"
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                  />
+                </div>
+                <p>
+                  Belum punya akun? <a href="#">Daftar disini!</a>
+                </p>
+                <button className="btn btn-primary w-100" onClick={() => handleLogin()}>
+                  Login
+                </button>
+                <hr className="my-3" />
+                <button className="btn btn-outline-primary w-100">
+                  <i class="fa fa-vr-cardboard fs-6 me-3"></i>Login dengan Gmail
+                </button>
               </div>
             </div>
           </div>
