@@ -8,7 +8,7 @@ export default function Footer() {
               <a href="">
                 <div className="social d-flex align-items-center gap-4 mb-2">
                   <div className="box-social bg-primary rounded">
-                    <i class="fa-brands fa-instagram fs-4"></i>
+                    <i className="fa-brands fa-instagram fs-4"></i>
                   </div>
                   <p className="mb-0 fs-5">Instagram</p>
                 </div>
@@ -16,7 +16,7 @@ export default function Footer() {
               <a href="">
                 <div className="social d-flex align-items-center gap-4 mb-2">
                   <div className="box-social bg-primary rounded">
-                    <i class="fa-brands fa-twitter fs-4"></i>
+                    <i className="fa-brands fa-twitter fs-4"></i>
                   </div>
                   <p className="mb-0 fs-5">Twitter</p>
                 </div>
@@ -24,7 +24,7 @@ export default function Footer() {
               <a href="">
                 <div className="social d-flex align-items-center gap-4 mb-2">
                   <div className="box-social bg-primary rounded">
-                    <i class="fa fa-envelope fs-4"></i>
+                    <i className="fa fa-envelope fs-4"></i>
                   </div>
                   <p className="mb-0 fs-5">Email</p>
                 </div>

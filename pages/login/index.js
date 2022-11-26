@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Navbar from "../../components/navbar";
 import { useState } from "react";
 
@@ -24,6 +25,10 @@ export default function Login() {
 
   return (
     <div className="login-page">
+      <Head>
+        <title>Login - Yes Plis KW</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
       <main>
         <div className="container py-5">
@@ -70,7 +75,7 @@ export default function Login() {
                 </button>
                 <hr className="my-3" />
                 <button className="btn btn-outline-primary w-100">
-                  <i class="fa fa-vr-cardboard fs-6 me-3"></i>Login dengan Gmail
+                  <i className="fa fa-vr-cardboard fs-6 me-3"></i>Login dengan Gmail
                 </button>
               </div>
             </div>
