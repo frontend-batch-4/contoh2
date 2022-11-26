@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Footer from "../components/footer";
 
 export default function Home() {
+  const test = process.env.NEXT_PUBLIC_TESTING;
   const settings = {
     className: "center",
     centerMode: true,
@@ -53,6 +54,10 @@ export default function Home() {
       <Navbar />
 
       <main>
+        <div className="container py-5">
+          <h1>halo {test}</h1>
+        </div>
+
         {/* carousel section */}
         <div className="carousel-sec py-5">
           <Slider {...settings}>
@@ -220,3 +225,14 @@ export function Slide(props) {
     </div>
   );
 }
+
+// export function getServerSideProps() {
+//   const baseUrl = process.env.base_url;
+//   console.log(baseUrl);
+//   console.log("halo");
+//   return {
+//     props: {
+//       title: "haha",
+//     },
+//   };
+// }
