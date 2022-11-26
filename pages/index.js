@@ -54,10 +54,6 @@ export default function Home() {
       <Navbar />
 
       <main>
-        <div className="container py-5">
-          <h1>halo {test}</h1>
-        </div>
-
         {/* carousel section */}
         <div className="carousel-sec py-5">
           <Slider {...settings}>
