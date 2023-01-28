@@ -6,6 +6,11 @@
   font-family: sofia-sans;
 }
 
+.btn-clear {
+  background: none;
+  border: none;
+}
+
 .icon-24 {
   width: 24px;
   height: 24px;
@@ -86,4 +91,51 @@
   height: 100%;
   width: 1px;
   background-color: #d9d9d9;
+}
+
+.about .hero {
+  background-image: url("/img/banner-about.jpg");
+  background-position: center;
+  background-size: cover;
+  background-color: red;
+  min-height: 500px;
+  height: 75vh;
+}
+.about .icon-achievement {
+  width: 42px;
+  height: 42px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.about .card-fitures {
+  height: 340px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+.about .card-fitures img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.about .card-fitures .desc-card {
+  background-color: rgba(226, 141, 43, 0.8);
+  width: 100%;
+}
+.about .faq .question {
+  border: 1px solid #d9d9d9;
+}
+.about .faq .answer {
+  border: 1px solid #d9d9d9;
+  border-top: none;
 }/*# sourceMappingURL=style.css.map */

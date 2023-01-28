@@ -7,6 +7,11 @@
   font-family: sofia-sans;
 }
 
+.btn-clear {
+  background: none;
+  border: none;
+}
+
 // icon size
 .icon-24 {
   width: 24px;
@@ -106,4 +111,51 @@
   height: 100%;
   width: 1px;
   background-color: #d9d9d9;
+}
+
+.about {
+  .hero {
+    background-image: url("/img/banner-about.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: red;
+    min-height: 500px;
+    height: 75vh;
+  }
+  .icon-achievement {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    object-position: center;
+  }
+  .card-fitures {
+    height: 340px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    img {
+      position: absolute;
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+    background-position: center;
+    background-size: cover;
+    .desc-card {
+      background-color: #e28d2bcc;
+      width: 100%;
+    }
+  }
+  .faq {
+    .question {
+      border: 1px solid #d9d9d9;
+    }
+    .answer {
+      border: 1px solid #d9d9d9;
+      border-top: none;
+    }
+  }
 }
