@@ -11,6 +11,10 @@
   border: none;
 }
 
+.bg-purple {
+  background-color: #8a2be2;
+}
+
 .icon-24 {
   width: 24px;
   height: 24px;
@@ -138,4 +142,58 @@
 .about .faq .answer {
   border: 1px solid #d9d9d9;
   border-top: none;
+}
+
+.single-event .guests-star .banner-guest-star {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background-color: #e28e2b;
+}
+.single-event .guests-star .banner-guest-star .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  z-index: 0;
+  top: 0;
+  right: 20px;
+}
+.single-event .guests-star .banner-guest-star .desc {
+  position: relative;
+  z-index: 1;
+}
+.single-event .event-information .descr {
+  position: relative;
+}
+.single-event .event-information .descr::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+}
+.single-event .tickets .card-ticket .collapse-ticket {
+  border: 2px solid #d9d9d9;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.single-event .tickets .card-ticket .extend-ticket {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.single-event .card-booking {
+  border: 2px solid #d9d9d9;
+  border-radius: 8px;
 }/*# sourceMappingURL=style.css.map */

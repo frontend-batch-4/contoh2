@@ -3,13 +3,22 @@
   src: url("/fonts/SofiaSans-VF.ttf");
 }
 
+// color variables
+$purple: #8a2be2;
+$gray: #d9d9d9;
+
+// for all
 * {
   font-family: sofia-sans;
 }
 
+// universal
 .btn-clear {
   background: none;
   border: none;
+}
+.bg-purple {
+  background-color: $purple;
 }
 
 // icon size
@@ -157,5 +166,67 @@
       border: 1px solid #d9d9d9;
       border-top: none;
     }
+  }
+}
+
+.single-event {
+  .guests-star {
+    .banner-guest-star {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background-color: #e28e2b;
+      .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+        top: 0;
+        right: 20px;
+      }
+      .desc {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+  .event-information {
+    .descr {
+      position: relative;
+      &::after {
+        content: " ";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      }
+    }
+  }
+  .tickets {
+    .card-ticket {
+      .collapse-ticket {
+        border: 2px solid $gray;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .extend-ticket {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+  .card-booking {
+    border: 2px solid $gray;
+    border-radius: 8px;
   }
 }
