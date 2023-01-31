@@ -5,7 +5,7 @@ export default function Profile() {
   return (
     <div className="profile">
       <Head>
-        <title>Login - Yes Plis KW</title>
+        <title>Profile - Yes Plis KW</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />

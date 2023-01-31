@@ -25,6 +25,25 @@ $gray: #d9d9d9;
   color: $purple;
 }
 
+// components
+.searchbar {
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  input {
+    border: none;
+    padding: 0.5em 1em;
+  }
+}
+.navbar {
+  .searchbar {
+    width: 400px !important;
+    @media (max-width: 992px) {
+      width: 100% !important;
+    }
+  }
+}
+
 // icon size
 .icon-24 {
   width: 24px;
@@ -263,6 +282,15 @@ $gray: #d9d9d9;
       width: 178px;
       object-fit: cover;
       object-position: center;
+    }
+  }
+}
+
+.history-profile {
+  .card-event {
+    .thumbnail-event {
+      height: 100px;
+      width: 178px;
     }
   }
 }

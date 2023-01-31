@@ -20,26 +20,21 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          {/* Search form */}
-          <div className="d-flex mb-2 mb-md-0">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
+          {/* search history ticket */}
+          <div className="searchbar border border-2 w-100 rounded my-2 mb-lg-0">
+            <input type="search" className="w-100" placeholder="Pencarian riwayat transaksi" />
+            <button className="btn-clear border-start border-2">
+              <img src="/icons/search.svg" />
             </button>
           </div>
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-            <li className="nav-item">
-              <Link className="btn btn-outline-primary" href="/register">
+          <ul className="navbar-nav d-flex flex-row ms-auto mb-2 mb-lg-0 gap-2">
+            <li className="nav-item w-100">
+              <Link className="btn w-100 btn-outline-primary" href="/register">
                 Daftar
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="btn btn-primary text-white" href="/login">
+            <li className="nav-item w-100">
+              <Link className="btn w-100 btn-primary text-white" href="/login">
                 Login
               </Link>
             </li>
