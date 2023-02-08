@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Footer from "../components/footer";
 
 export default function Home() {
-  const test = process.env.NEXT_PUBLIC_TESTING;
   const settings = {
     className: "center",
     centerMode: true,
@@ -63,16 +62,16 @@ export default function Home() {
           </Slider>
         </div>
 
-        {/* Starting soon */}
+        {/* Sedang Berlangsung */}
         <div className="display-event py-5">
           <div className="container">
             <div className="row">
               <div className="col-md-8 main-display-event">
                 <h2 className="mb-4">
-                  Starting <span className="fw-bold text-primary">Soon</span>
+                  Event <span className="fw-bold text-primary">Berlangsung!</span>
                 </h2>
-                <div className="row">
-                  <div className="col-md-6">
+                <div className="row align-items-stretch">
+                  <div className="col-md-6 mb-3">
                     <div className="card-event">
                       <div className="thumbnail--card-event">
                         <Image
@@ -88,9 +87,9 @@ export default function Home() {
                         <p>
                           Oleh GAMABUNTA - Lapangan Grha Sabha Pramana (GSP) Universitas Gadjah Mada
                         </p>
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center mt-auto">
                           <div>
-                            <p className="mb-0">Mulai dari</p>
+                            <p className="mb-0 text-yellow fw-bold">Mulai dari</p>
                             <p className="mb-0">Rp 20.000</p>
                           </div>
                           <button className="btn btn-outline-primary ms-auto">Book Now</button>
@@ -98,7 +97,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 mb-3">
                     <div className="card-event">
                       <div className="thumbnail--card-event">
                         <Image
@@ -109,14 +108,14 @@ export default function Home() {
                         />
                       </div>
                       <div className="decs--card-event">
-                        <h3 className="fw-bold">Mangafest UGM</h3>
+                        <h3 className="fw-bold">Misalnya Nama Event Yang Sangat Panjang</h3>
                         <p className="text-secondary">29 October - 30 October</p>
                         <p>
                           Oleh GAMABUNTA - Lapangan Grha Sabha Pramana (GSP) Universitas Gadjah Mada
                         </p>
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center mt-auto">
                           <div>
-                            <p className="mb-0">Mulai dari</p>
+                            <p className="mb-0 text-yellow fw-bold">Mulai dari</p>
                             <p className="mb-0">Rp 20.000</p>
                           </div>
                           <button className="btn btn-outline-primary ms-auto">Book Now</button>
@@ -124,7 +123,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 mb-3">
                     <div className="card-event">
                       <div className="thumbnail--card-event">
                         <Image
@@ -135,14 +134,16 @@ export default function Home() {
                         />
                       </div>
                       <div className="decs--card-event">
-                        <h3 className="fw-bold">Mangafest UGM</h3>
+                        <h3 className="fw-bold">
+                          Misalnya Nama Event Yang Sangat Panjang Banget Ka...
+                        </h3>
                         <p className="text-secondary">29 October - 30 October</p>
                         <p>
                           Oleh GAMABUNTA - Lapangan Grha Sabha Pramana (GSP) Universitas Gadjah Mada
                         </p>
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center mt-auto">
                           <div>
-                            <p className="mb-0">Mulai dari</p>
+                            <p className="mb-0 text-yellow fw-bold">Mulai dari</p>
                             <p className="mb-0">Rp 20.000</p>
                           </div>
                           <button className="btn btn-outline-primary ms-auto">Book Now</button>
@@ -178,7 +179,7 @@ export default function Home() {
                         </p>
                         <div className="d-flex align-items-center">
                           <div>
-                            <p className="mb-0">Mulai dari</p>
+                            <p className="mb-0 text-yellow fw-bold">Mulai dari</p>
                             <p className="mb-0">Rp 20.000</p>
                           </div>
                           <button className="btn btn-outline-primary ms-auto">Book Now</button>
@@ -216,6 +217,15 @@ export function Slide(props) {
             aliquet euismod, neque orci egestas diam, ...
           </p>
           <p className="date">22 November - 01 Desember</p>
+          {/* footer */}
+          <div className="mt-3 mt-lg-5 d-flex justify-content-between align-items-center">
+            {/* location */}
+            <div className="d-flex gap-2 align-items-center">
+              <img src="/icons/location-outline-gray.svg" />
+              <span>Sleman, Yogyakarta</span>
+            </div>
+            <button className="btn btn-outline-primary">Pesan</button>
+          </div>
         </div>
       </div>
     </div>

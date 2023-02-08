@@ -1,0 +1,55 @@
+import Link from "next/link";
+import Swal from "sweetalert2";
+
+export default function NavbarSigned() {
+  const logout = () => {
+    Swal.fire({
+      title: "Yakin untuk keluar?",
+      showCancelButton: true,
+      confirmButtonText: "Keluar",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        document.cookie = `jwt='';max-age=0`;
+        window.location.href = "/login";
+      }
+    });
+  };
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom border-2">
+      <div className="container">
+        <Link className="navbar-brand fw-bold fs-4 text-primary" href="/">
+          Logo
+        </Link>
+        {/* button menu mobile */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {/* search history ticket */}
+          <div className="searchbar border border-2 w-100 rounded mb-2 mt-3 mt-lg-0 mb-lg-0">
+            <input type="search" className="w-100" placeholder="Cari event disini..." />
+            <button className="btn-clear border-start border-2">
+              <img src="/icons/search.svg" />
+            </button>
+          </div>
+          <ul className="navbar-nav d-flex flex-row ms-auto mb-2 mb-lg-0 gap-2">
+            <li className="nav-item w-100">
+              <button className="btn w-100 btn-primary text-white" onClick={() => logout()}>
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}

@@ -24,6 +24,9 @@ $gray: #d9d9d9;
 .text-purple {
   color: $purple;
 }
+main {
+  padding-top: 80px;
+}
 
 // components
 .searchbar {
@@ -36,6 +39,12 @@ $gray: #d9d9d9;
   }
 }
 .navbar {
+  min-height: 80px;
+  position: fixed !important;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
   .searchbar {
     width: 400px !important;
     @media (max-width: 992px) {
@@ -99,6 +108,7 @@ $gray: #d9d9d9;
           }
           @media (max-width: 576px) {
             width: 100%;
+            padding: 12px;
           }
         }
         .date {
@@ -112,14 +122,19 @@ $gray: #d9d9d9;
       border: 1px solid #d9d9d9;
       border-radius: 0.5rem;
       overflow: hidden;
-      margin-bottom: 2rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
       .thumbnail--card-event {
         position: relative;
         width: 100%;
         height: 150px;
       }
       .decs--card-event {
+        display: flex;
+        flex-direction: column;
         padding: 1rem;
+        flex-grow: 1;
       }
     }
     // .main-display-event {

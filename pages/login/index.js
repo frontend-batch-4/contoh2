@@ -1,16 +1,40 @@
 import Head from "next/head";
 import Navbar from "../../components/navbar";
 import { useState } from "react";
+import Swal from "sweetalert2";
+import * as loading from "/methods/loading";
+import validator from "validator";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+    // validate input
+    if (email === "") {
+      return Swal.fire({
+        icon: "warning",
+        title: "Email belum di isi",
+      });
+    } else if (!validator.isEmail(email)) {
+      return Swal.fire({
+        icon: "warning",
+        title: "Email tidak benar",
+      });
+    } else if (password === "") {
+      return Swal.fire({
+        icon: "warning",
+        title: "Password belum di isi",
+      });
+    }
+
+    loading.show();
+
     const data = {
       login_identity: email,
-      password,
+      password: password,
     };
+
     const options = {
       method: "POST",
       headers: {
@@ -18,9 +42,34 @@ export default function Login() {
       },
       body: JSON.stringify(data),
     };
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/v1/user/login`, options)
+
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/v1/user/login`, options)
       .then((response) => response.json())
-      .catch((err) => console.error(err));
+      .then((response) => {
+        if ((response.status === 0) | (response.status === 200)) {
+          document.cookie = `jwt=${response.authToken}`;
+          window.location.href = "/";
+        } else {
+          loading.hide();
+          Swal.fire({
+            icon: "error",
+            title: "Login gagal",
+            text: "email atau password anda salah!",
+          });
+        }
+      })
+      .catch((err) => {
+        // di catch tidak menerima error (bug)
+        loading.hide();
+        Swal.fire({
+          icon: "error",
+          title: "Login gagal",
+          text: "email atau password anda salah!",
+        });
+
+        // debug
+        console.error(err);
+      });
   };
 
   return (
@@ -47,6 +96,7 @@ export default function Login() {
                     type="text"
                     className="form-control"
                     value={email}
+                    placeholder="Masukkan email atau username..."
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
@@ -62,6 +112,7 @@ export default function Login() {
                     type="password"
                     className="form-control"
                     value={password}
+                    placeholder="Masukkan password..."
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}

@@ -33,9 +33,9 @@ export default function Footer() {
             <div className="col-md-6 border-end border-start border-2 px-5 text-center">
               <h2 className="mb-3">Promosikan acaramu dan jual tiketmu dengan mudah</h2>
               <h2>
-                Contact us{" "}
+                Hubungi kami{" "}
                 <a href="#" className="text-primary">
-                  here
+                  disini!
                 </a>
               </h2>
             </div>
