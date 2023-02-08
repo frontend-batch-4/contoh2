@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import * as fetch from "/methods/fetch";
 
 import NavbarSigned from "./navbar-signed";
 

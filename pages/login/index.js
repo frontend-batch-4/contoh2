@@ -119,15 +119,15 @@ export default function Login() {
                   />
                 </div>
                 <p>
-                  Belum punya akun? <a href="#">Daftar disini!</a>
+                  Belum punya akun? <a href="/register">Daftar disini!</a>
                 </p>
                 <button className="btn btn-primary w-100" onClick={() => handleLogin()}>
                   Login
                 </button>
-                <hr className="my-3" />
+                {/* <hr className="my-3" />
                 <button className="btn btn-outline-primary w-100">
                   <i className="fa fa-vr-cardboard fs-6 me-3"></i>Login dengan Gmail
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
